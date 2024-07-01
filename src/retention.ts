@@ -39,9 +39,7 @@ async function dockerRegistryRetention() {
     const config: { match: string; retention: string }[] = [];
 
     if (multiple) {
-      info(multiple);
       const multipleConfig = parse(multiple);
-      info(JSON.stringify(multipleConfig));
       if (!Array.isArray(multipleConfig)) {
         throw new Error('multiple config must be an array');
       }
