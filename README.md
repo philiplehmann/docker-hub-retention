@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: docker hub retention
         id: docker-hub-retention
-        uses: philiplehmann/docker-hub-retention
+        uses: philiplehmann/docker-hub-retention@main
         with:
           repository: philiplehmann/puppeteer
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -44,7 +44,7 @@ jobs:
     steps:
       - name: docker hub retention
         id: docker-hub-retention
-        uses: philiplehmann/docker-hub-retention
+        uses: philiplehmann/docker-hub-retention@main
         with:
           repository: philiplehmann/puppeteer
           username: ${{ secrets.DOCKERHUB_USERNAME }}
