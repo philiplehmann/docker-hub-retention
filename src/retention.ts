@@ -54,6 +54,9 @@ async function dockerRegistryRetention() {
       config.push({ match, retention });
     }
 
+    info(`repository: ${repository}`);
+    info(`config: ${JSON.stringify(config)}`);
+
     try {
       const client = new DockerRegistry({ repository });
 

@@ -58,6 +58,9 @@ export class DockerRegistry {
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
     });
+    if (!response.ok) {
+      throw new Error('Failed to login to Docker Hub');
+    }
     const body = await response.json();
     this.authToken = body.token;
   }
@@ -85,6 +88,9 @@ export class DockerRegistry {
         headers: { Authorization: `Bearer ${this.authToken}` },
       },
     );
+    if (!response.ok) {
+      throw new Error('Failed to fetch tags from Docker Hub');
+    }
     return await response.json();
   }
 
@@ -96,7 +102,7 @@ export class DockerRegistry {
         Accept: 'application/json',
       },
     });
-    if (response.status !== 204) {
+    if (!response.ok) {
       throw new Error(`Failed to delete tag ${tag}`);
     }
   }
