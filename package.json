@@ -1,0 +1,40 @@
+{
+  "name": "docker-hub-retention",
+  "description": "Github action to delete old images from Docker Hub",
+  "license": "MIT",
+  "version": "0.0.1",
+  "main": "dist/retention.js",
+  "author": "Philip Lehmann",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "format": "yarn biome format --write src/",
+    "format-check": "yarn biome format src/",
+    "lint": "yarn biome lint src/",
+    "package:retention": "esbuild src/retention.ts --bundle --minify --platform=node --outfile=dist/retention.js",
+    "package": "yarn package:retention",
+    "test": "vitest",
+    "release:build": "yarn format && yarn build && yarn package",
+    "github:release": "gh release create \"$(npm version patch --git-tag-version=false)\" -t Release -d=false -n \"\" -p=false",
+    "git:commit": "git add -A && git commit -m \"Release\"",
+    "git:push": "git push origin main && git push --tags",
+    "release": "yarn release:build && yarn github:release && yarn git:commit && yarn git:push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philiplehmann/docker-hub-retention.git"
+  },
+  "dependencies": {
+    "@actions/core": "1.10.1",
+    "date-fns": "3.6.0",
+    "yaml": "^2.4.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/node": "20.14.9",
+    "esbuild": "0.21.5",
+    "typescript": "5.5.2",
+    "vitest": "1.6.0"
+  },
+  "packageManager": "yarn@4.3.1"
+}

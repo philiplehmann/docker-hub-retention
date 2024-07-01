@@ -1,0 +1,34 @@
+name: "docker hub retention"
+author: philiplehmann
+description: "delete docker images from docker hub"
+inputs:
+  repository:
+    description: "namespace and name of the repository"
+    required: true
+  username:
+    description: dockerhub username for login
+    required: false
+  password:
+    description: dockerhub password/token for login
+    required: false
+  match:
+    description: regex to match the tags
+    required: false
+  retention:
+    description: after how long the image should be deleted d, m, y prefixed with the number (7d, 1m, 1y)
+    required: false
+    default: "30d"
+  multiple:
+    description: match / retention for multiple tags. yaml formatted string with match / retention as array
+    required: false
+  dryrun:
+    description: only print tags which would be deleted
+    required: false
+    default: "false"
+
+runs:
+  using: node20
+  main: "dist/retention.js"
+branding:
+  icon: "delete"
+  color: "gray-dark"
