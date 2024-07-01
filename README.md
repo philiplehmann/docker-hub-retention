@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  dependencies:
+  docker-hub-retention:
     runs-on: [ubuntu-latest]
     steps:
       - name: docker hub retention
@@ -39,7 +39,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  dependencies:
+  docker-hub-retention:
     runs-on: [ubuntu-latest]
     steps:
       - name: docker hub retention
