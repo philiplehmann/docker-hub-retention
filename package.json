@@ -34,7 +34,7 @@
     "@types/node": "20.14.10",
     "esbuild": "0.23.0",
     "typescript": "5.5.3",
-    "vitest": "2.0.1"
+    "vitest": "2.0.2"
   },
   "packageManager": "yarn@4.3.1"
 }
