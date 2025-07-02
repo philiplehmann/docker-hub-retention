@@ -8,9 +8,7 @@
   "scripts": {
     "watch": "tsc --watch",
     "build": "tsc",
-    "format": "yarn biome format --write src/",
-    "format-check": "yarn biome format src/",
-    "lint": "yarn biome lint src/",
+    "lint": "biome check --write src/",
     "package:retention": "esbuild src/retention.ts --bundle --minify --platform=node --outfile=dist/retention.js",
     "package": "yarn package:retention",
     "test": "vitest",
@@ -30,7 +28,7 @@
     "yaml": "^2.4.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.0.6",
     "@types/node": "22.16.0",
     "esbuild": "0.25.5",
     "typescript": "5.8.3",
