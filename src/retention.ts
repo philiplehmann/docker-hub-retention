@@ -1,9 +1,9 @@
 /** @format */
 
 import { getInput, info, setFailed } from '@actions/core';
-import { DockerRegistry, type DockerTag } from './docker';
 import { parseISO, subDays, subMonths, subYears } from 'date-fns';
 import { parse } from 'yaml';
+import { DockerRegistry, type DockerTag } from './docker';
 
 process.on('uncaughtException', (e) => info(`warning: ${e.message}`));
 
