@@ -12,7 +12,7 @@
     "package:retention": "esbuild src/retention.ts --bundle --minify --platform=node --outfile=dist/retention.js",
     "package": "yarn package:retention",
     "test": "vitest",
-    "release:build": "yarn format && yarn build && yarn package",
+    "release:build": "yarn lint && yarn build && yarn package",
     "github:release": "gh release create \"$(npm version patch --git-tag-version=false)\" -t Release -d=false -n \"\" -p=false",
     "git:commit": "git add -A && git commit -m \"Release\"",
     "git:push": "git push origin main && git push --tags",
