@@ -28,7 +28,7 @@
     "yaml": "^2.4.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.2",
+    "@biomejs/biome": "2.2.4",
     "@types/node": "22.18.8",
     "esbuild": "0.25.9",
     "typescript": "5.9.3",
