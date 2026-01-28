@@ -23,7 +23,7 @@
     "url": "git+https://github.com/philiplehmann/docker-hub-retention.git"
   },
   "dependencies": {
-    "@actions/core": "2.0.2",
+    "@actions/core": "2.0.3",
     "date-fns": "4.1.0",
     "yaml": "^2.4.5"
   },
