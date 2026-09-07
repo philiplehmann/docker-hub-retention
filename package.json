@@ -16,7 +16,7 @@
     "github:release": "gh release create \"$(npm version patch --git-tag-version=false)\" -t Release -d=false -n \"\" -p=false",
     "git:commit": "git add -A && git commit -m \"Release\"",
     "git:push": "git push origin main && git push --tags",
-    "release": "yarn release:build && yarn github:release && yarn git:commit && yarn git:push"
+    "release": "bun run release:build && bun run github:release && bun run git:commit && bun run git:push"
   },
   "repository": {
     "type": "git",
