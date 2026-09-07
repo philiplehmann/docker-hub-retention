@@ -11,7 +11,7 @@
     "lint": "biome check --write src/",
     "package:retention": "bun build src/retention.ts --bundle --minify --target=node --outfile=dist/retention.js",
     "package": "bun run package:retention",
-    "test": "bun test",
+    "test": "bun test --coverage",
     "release:build": "bun run lint && bun run build && bun run package",
     "github:release": "gh release create \"$(npm version patch --git-tag-version=false)\" -t Release -d=false -n \"\" -p=false",
     "git:commit": "git add -A && git commit -m \"Release\"",
