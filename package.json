@@ -22,15 +22,13 @@
     "type": "git",
     "url": "git+https://github.com/philiplehmann/docker-hub-retention.git"
   },
-  "dependencies": {
-    "@actions/core": "3.0.1",
-    "date-fns": "4.4.0",
-    "yaml": "^2.4.5"
-  },
   "devDependencies": {
+    "@actions/core": "3.0.1",
     "@biomejs/biome": "2.5.12",
     "@types/node": "24.13.3",
-    "typescript": "7.0.2"
+    "date-fns": "4.4.0",
+    "typescript": "7.0.2",
+    "yaml": "^2.4.5"
   },
   "packageManager": "bun@1.4.2"
 }
