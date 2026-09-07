@@ -13,18 +13,16 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v7
-      - run: |
-          yarn install
-      - run: |
-          yarn release:build
+      - run: bun install
+      - run: bun run release:build
   typecheck:
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - uses: actions/checkout@v7
-      - run: yarn install
-      - run: yarn tsc --noEmit
+      - run: bun install
+      - run: bunx tsc --noEmit
   test:
     runs-on: [ubuntu-latest]
     steps:
@@ -40,4 +38,3 @@ jobs:
           dryrun: "true" # optional, default is false
           match: "([0-9\\.]+)-([0-9]+)" # optional
           retention: "7d" # optional, default is 30d
-
