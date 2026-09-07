@@ -2,6 +2,16 @@ name: release
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Version bump type"
+        required: true
+        type: choice
+        default: patch
+        options:
+          - patch
+          - minor
+          - major
 
 jobs:
   release:
@@ -28,4 +38,5 @@ jobs:
       - name: release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION_TYPE: ${{ inputs.version }}
         run: bun run release
